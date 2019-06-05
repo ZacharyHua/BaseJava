@@ -86,7 +86,7 @@ public class Demo5 {
     public void waitNotifyTest() throws InterruptedException {
         new Thread(()->{
             synchronized (this){
-                if (baozidian == null ){
+                while (baozidian == null ){
                     System.out.println("1. 进入等待状态");
                     try {
                         this.wait();
